@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWEI | Awdal Water and Education Initiative</title>
+  <meta name="description" content="Awdal Water & Education Initiative Inc. — Securing clean water infrastructure and educational stability across the rangelands of Somaliland." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon placeholder: replace favicon.ico with your circular AWEI emblem -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+  <!-- ===== GLOBAL NAV ===== -->
+  <nav id="main-nav">
+    <a href="#" class="nav-brand" onclick="showPage('home'); return false;">
+      <div class="nav-logo-circle">AWEI</div>
+      <div class="nav-brand-text">
+        AWEI
+        <span>Awdal Water and Education Initiative</span>
+      </div>
+    </a>
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" onclick="showPage('home'); return false;" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('framework'); return false;" id="nav-framework">Our Framework</a></li>
+      <li><a href="#" onclick="showPage('pilot'); return false;" id="nav-pilot">The AWEI Pilot</a></li>
+      <li><a href="#" onclick="showPage('leadership'); return false;" id="nav-leadership">Leadership & Governance</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======================================================
+       PAGE 1: HOME
+       ====================================================== -->
+  <div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <video class="hero-video-bg" autoplay muted loop playsinline>
+        <source src="assets/awei_field.mov" type="video/mp4" />
+      </video>
+      <!-- Fallback image shown if video doesn't load -->
+      <img class="hero-img-bg" src="assets/awei_vest.jpeg" alt="AWEI field work" id="hero-fallback" style="display:none;" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Somaliland · East Africa · Est. 2026</span>
+        </div>
+        <h1 class="display-serif">AWEI</h1>
+        <p class="hero-subtitle-org">Awdal Water and Education Initiative</p>
+        <h3>Securing clean water infrastructure and educational stability across the rangelands of Somaliland.</h3>
+        <div>
+          <a href="#" class="btn-primary" onclick="showPage('pilot'); return false;">Support the 2026 Pilot Initiative</a>
+          <a href="#" class="btn-outline" onclick="showPage('framework'); return false;">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="mission-section">
+      <div class="mission-inner">
+        <div class="mission-text">
+          <span class="section-label">Our Mission</span>
+          <h2 class="display-serif">Strategic Framework</h2>
+          <p>Awdal Water & Education Initiative Inc. (AWEI) is an independent international non-governmental organization dedicated to mitigating the devastating impacts of climate-induced drought in Somaliland. By building resilient water infrastructure and stabilizing local primary schools, we safeguard both community health and the educational future of the region's children.</p>
+        </div>
+        <div class="mission-visual">
+          <img class="mission-img" src="assets/awei_vest.jpeg" alt="AWEI team member in the field" />
+          <div class="mission-stat-badge">
+            <div class="stat-num">$5,000</div>
+            <div class="stat-label">2026 Pilot Goal</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars -->
+    <section class="pillars-section">
+      <div class="pillars-inner">
+        <div class="pillars-header">
+          <span class="section-label">Core Strategy</span>
+          <h2 class="display-serif">Three Pillars of Action</h2>
+        </div>
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">💧</div>
+            <div class="pillar-num">I. WASH</div>
+            <h3>Water Security</h3>
+            <p>AWEI develops mechanized borehole infrastructure and distribution pipelines to deliver clean, reliable groundwater to remote, drought-affected communities.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">📚</div>
+            <div class="pillar-num">II. Education</div>
+            <h3>Educational Access</h3>
+            <p>AWEI mitigates school dropouts by equipping rural primary classrooms with dedicated water storage, hygiene facilities, and essential academic resources.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🤝</div>
+            <div class="pillar-num">III. Community</div>
+            <h3>Community Resilience</h3>
+            <p>AWEI partners directly with local elders, municipal leaders, and regional technicians to ensure long-term community ownership and sustainability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact on Home -->
+    <section class="contact-section">
+      <div class="contact-inner">
+        <span class="section-label" style="color:var(--gold);">Get In Touch</span>
+        <h3>Connect with AWEI</h3>
+        <p>For partnership inquiries, academic collaborations, or institutional tracking, reach out to our executive office.</p>
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname-home">First Name</label>
+              <input type="text" id="fname-home" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label for="lname-home">Last Name</label>
+              <input type="text" id="lname-home" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email-home">Email Address</label>
+            <input type="email" id="email-home" placeholder="jane@organization.org" required />
+          </div>
+          <div class="form-group">
+            <label for="org-home">Organization</label>
+            <input type="text" id="org-home" placeholder="Your organization (optional)" />
+          </div>
+          <div class="form-group">
+            <label for="msg-home">Message</label>
+            <textarea id="msg-home" placeholder="Tell us about your inquiry..." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+        <div class="form-success" id="form-success-home">
+          ✓ Thank you for reaching out. Our team will be in touch at <strong>contact@awdalinitiative.org</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Awdal Water & Education Initiative Inc. All Rights Reserved.<br />
+      Contact: <a href="mailto:contact@awdalinitiative.org">contact@awdalinitiative.org</a> | Madison, WI<br />
+      Awdal Water & Education Initiative Inc. is a registered Wisconsin nonstock entity with 501(c)(3) status currently pending with the IRS.</p>
+    </footer>
+  </div>
+
+
+  <!-- ======================================================
+       PAGE 2: OUR FRAMEWORK
+       ====================================================== -->
+  <div class="page" id="page-framework">
+
+    <section class="page-hero">
+      <span class="section-label" style="color:var(--gold);">The Challenge</span>
+      <h1 class="display-serif">The Crisis: Water Scarcity &amp; Educational Disruption</h1>
+      <p>Understanding the root causes that drive AWEI's mission across northern Somalia.</p>
+    </section>
+
+    <section class="crisis-section">
+      <div class="crisis-inner">
+        <div class="crisis-text">
+          <span class="section-label">Regional Context</span>
+          <h2 class="display-serif">A Cycle We Can Break</h2>
+          <p>Extended ecological crises in northern Somalia (Somaliland) have disproportionately impacted rural and pastoralist families. When traditional water sources fail, children — particularly young girls — are pulled out of classrooms to walk miles in search of water, or schools are forced to shut down entirely due to unsafe sanitary conditions.</p>
+          <p>AWEI breaks this cycle by anchoring permanent, clean water infrastructure directly into foundational educational hubs — creating a stabilizing force that protects both community health and children's futures simultaneously.</p>
+          <div class="callout-box">
+            <p>Traditional shallow wells fail completely during multi-season droughts, leaving deep-aquifer borehole drilling as the only viable solution to keep communities and schools anchored in place. Without this infrastructure, displacement is inevitable.</p>
+          </div>
+        </div>
+        <div class="crisis-visual">
+          <img src="assets/awei_vest.jpeg" alt="AWEI representative in Somaliland classroom" />
+          <div style="margin-top:24px; background:var(--off-white); border-radius:8px; padding:24px; border:1px solid var(--gray-300);">
+            <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--green); margin-bottom:16px;">Why This Matters</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--gray-800);">
+                <span style="color:var(--navy); font-size:18px;">🏫</span> Schools forced to close without clean water access
+              </div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--gray-800);">
+                <span style="font-size:18px;">👧</span> Girls disproportionately pulled from classrooms
+              </div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--gray-800);">
+                <span style="font-size:18px;">🌵</span> Multi-season droughts intensifying across the region
+              </div>
+              <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:var(--gray-800);">
+                <span style="font-size:18px;">💧</span> Shallow wells unreliable — deep boreholes are the solution
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Awdal Water & Education Initiative Inc. All Rights Reserved.<br />
+      Contact: <a href="mailto:contact@awdalinitiative.org">contact@awdalinitiative.org</a> | Madison, WI<br />
+      Awdal Water & Education Initiative Inc. is a registered Wisconsin nonstock entity with 501(c)(3) status currently pending with the IRS.</p>
+    </footer>
+  </div>
+
+
+  <!-- ======================================================
+       PAGE 3: THE AWEI PILOT
+       ====================================================== -->
+  <div class="page" id="page-pilot">
+
+    <section class="pilot-hero">
+      <span class="section-label" style="color:var(--gold);">Summer 2026</span>
+      <h1 class="display-serif">The AWEI Summer 2026 Pilot Campaign</h1>
+      <div style="margin-bottom:32px;">
+        <div class="funding-banner">
+          <div>
+            <span class="fund-label">Funding Goal</span>
+            $5,000 USD
+          </div>
+        </div>
+      </div>
+      <p class="pilot-intro-text">Before scaling to large-scale mechanized engineering, AWEI is launching an immediate $5,000 proof-of-concept pilot program this summer targeted at high-risk primary schools. This fast-tracked funding bypasses administrative overhead to deliver resources directly to the field.</p>
+    </section>
+
+    <section class="allocation-section">
+      <div class="allocation-inner">
+        <span class="section-label" style="display:block; text-align:center; margin-bottom:12px;">Where Your Support Goes</span>
+        <h2 class="display-serif">Pilot Fund Allocation</h2>
+        <p class="allocation-sub">100% of contributions reach the field. Zero administrative overhead in the United States.</p>
+        <div class="allocation-grid">
+          <div class="alloc-card">
+            <div style="font-size:36px; margin-bottom:20px;">🚰</div>
+            <h3>Sanitation &amp; Water Infrastructure</h3>
+            <p>Deploying localized water logistics pipelines and installing safe, durable, high-capacity water storage tanks directly on-site at primary schools to keep facilities sanitary and open.</p>
+          </div>
+          <div class="alloc-card green-top">
+            <div style="font-size:36px; margin-bottom:20px;">📖</div>
+            <h3>Educational Resources</h3>
+            <p>Equipping classrooms with essential academic supplies, books, and learning resources so students can remain focused on their education regardless of external climate instabilities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <span class="section-label" style="color:var(--gold);">Take Action</span>
+      <h2 class="display-serif">Make a Direct Impact</h2>
+      <p>Your contribution to the AWEI Pilot Initiative goes directly to communities and schools on the ground in the Awdal region.</p>
+      <a href="#CAMPAIGN_LINK_PLACEHOLDER" class="btn-primary" style="font-size:16px; padding:18px 48px;">
+        Contribute to the AWEI Pilot Initiative
+      </a>
+      <p class="cta-disclaimer">Crowdfunding link will be active shortly. 501(c)(3) status pending — contributions may be retroactively tax-deductible.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Awdal Water & Education Initiative Inc. All Rights Reserved.<br />
+      Contact: <a href="mailto:contact@awdalinitiative.org">contact@awdalinitiative.org</a> | Madison, WI<br />
+      Awdal Water & Education Initiative Inc. is a registered Wisconsin nonstock entity with 501(c)(3) status currently pending with the IRS.</p>
+    </footer>
+  </div>
+
+
+  <!-- ======================================================
+       PAGE 4: LEADERSHIP & GOVERNANCE
+       ====================================================== -->
+  <div class="page" id="page-leadership">
+
+    <section class="page-hero">
+      <span class="section-label" style="color:var(--gold);">Who We Are</span>
+      <h1 class="display-serif">Governance &amp; Global Strategy</h1>
+      <p>A cross-continental leadership team bridging international resources with local execution.</p>
+    </section>
+
+    <!-- Goals -->
+    <section class="leadership-goals">
+      <div class="leadership-goals-inner">
+        <span class="section-label">Strategic Objectives</span>
+        <h2 class="display-serif">Executive Goals</h2>
+        <ul class="goal-list">
+          <li>
+            <div class="goal-bullet">1</div>
+            To bridge international resources with local execution networks to safeguard vulnerable rangeland schools.
+          </li>
+          <li>
+            <div class="goal-bullet">2</div>
+            To establish verifiable, data-backed proof of concepts that qualify AWEI for major multi-year institutional foundation grants.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Board -->
+    <section class="board-section">
+      <div class="board-section-inner">
+        <span class="section-label">The Team</span>
+        <h2 class="display-serif">Executive Board</h2>
+        <p class="board-sub">Experienced leaders across law, diplomacy, academia, and community development.</p>
+        <div class="board-grid">
+          <div class="board-card">
+            <div class="board-avatar">HF</div>
+            <h3>Hamsa Farah</h3>
+            <div class="board-role">Founder &amp; President</div>
+            <p>Leads strategic vision, resource coordination, and cross-continental organizational management to bridge resource gaps between global diaspora networks and local East African partners.</p>
+          </div>
+          <div class="board-card green-border">
+            <div class="board-avatar green-bg">AL</div>
+            <h3>Aman [Last Name]</h3>
+            <div class="board-role">Legal Counsel &amp; Director</div>
+            <p>Manages regulatory compliance, international financial tracking, and institutional transparency. Brings extensive experience as a practicing U.S. State Prosecutor to ensure structural integrity across all corporate affairs.</p>
+          </div>
+          <div class="board-card green-border">
+            <div class="board-avatar gold-bg">HX</div>
+            <h3>Hon. [First Name] Xamuud</h3>
+            <div class="board-role">Diplomatic Advisor &amp; Director</div>
+            <p>Coordinates regional logistics, community elder relations, and governmental authorizations on the ground. Leverages his distinguished background as a former Foreign Minister of Somalia to steer high-level international partnerships.</p>
+          </div>
+          <div class="board-card">
+            <div class="board-avatar gray-bg">🎓</div>
+            <h3>Academic Advisory Council</h3>
+            <div class="board-role">Advisory Board</div>
+            <p>Supported by established university professors specializing in environmental sustainability and East African development, ensuring all AWEI infrastructure initiatives are rooted in peer-reviewed ecological data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legal Block -->
+    <section class="legal-section">
+      <div class="legal-inner">
+        <div class="legal-box">
+          <h3>Legal Transparency &amp; Status Notice</h3>
+          <p>Awdal Water & Education Initiative Inc. (AWEI) is a legally registered Domestic Nonstock Corporation in the State of Wisconsin (Entity ID: A122399 / Date of Incorporation: June 4, 2026).</p>
+          <p>Our comprehensive application for Federal 501(c)(3) tax-exempt status is currently pending with the Internal Revenue Service (IRS). In accordance with federal transparency guidelines, all financial logs are strictly maintained, and contributions made during this pending period may be considered retroactively tax-deductible to the full extent of the law upon final IRS determination.</p>
+          <div class="legal-highlight">
+            💼 Financial Integrity Pledge: 100% of all public contributions raised toward our Summer 2026 Pilot are deployed directly to localized vendor invoices, transportation, and equipment costs on the ground in the Awdal region. Zero capital from this pilot campaign is utilized for administrative or executive overhead within the United States.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact on Leadership -->
+    <section class="contact-section">
+      <div class="contact-inner">
+        <span class="section-label" style="color:var(--gold);">Get In Touch</span>
+        <h3>Connect with AWEI</h3>
+        <p>For partnership inquiries, academic collaborations, or institutional tracking, reach out to our executive office.</p>
+        <form class="contact-form" onsubmit="submitForm(event, 'leadership')">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname-lead">First Name</label>
+              <input type="text" id="fname-lead" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label for="lname-lead">Last Name</label>
+              <input type="text" id="lname-lead" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email-lead">Email Address</label>
+            <input type="email" id="email-lead" placeholder="jane@organization.org" required />
+          </div>
+          <div class="form-group">
+            <label for="org-lead">Organization</label>
+            <input type="text" id="org-lead" placeholder="Your organization (optional)" />
+          </div>
+          <div class="form-group">
+            <label for="msg-lead">Message</label>
+            <textarea id="msg-lead" placeholder="Tell us about your inquiry..." required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+        <div class="form-success" id="form-success-leadership">
+          ✓ Thank you for reaching out. Our team will be in touch at <strong>contact@awdalinitiative.org</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Awdal Water & Education Initiative Inc. All Rights Reserved.<br />
+      Contact: <a href="mailto:contact@awdalinitiative.org">contact@awdalinitiative.org</a> | Madison, WI<br />
+      Awdal Water & Education Initiative Inc. is a registered Wisconsin nonstock entity with 501(c)(3) status currently pending with the IRS.</p>
+    </footer>
+  </div>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Page router
+    const pages = ['home', 'framework', 'pilot', 'leadership'];
+    const pageMap = {
+      'home':       { pageId: 'page-home',       navId: 'nav-home' },
+      'framework':  { pageId: 'page-framework',  navId: 'nav-framework' },
+      'pilot':      { pageId: 'page-pilot',      navId: 'nav-pilot' },
+      'leadership': { pageId: 'page-leadership', navId: 'nav-leadership' },
+    };
+
+    function showPage(name) {
+      pages.forEach(p => {
+        document.getElementById(pageMap[p].pageId).classList.remove('active');
+        document.getElementById(pageMap[p].navId).classList.remove('active');
+      });
+      document.getElementById(pageMap[name].pageId).classList.add('active');
+      document.getElementById(pageMap[name].navId).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Close mobile nav
+      document.getElementById('nav-links').classList.remove('open');
+    }
+
+    // Mobile nav
+    function toggleMobileNav() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+
+    // Form submit handler (simulated — wire to real backend or Formspree)
+    function submitForm(e, page) {
+      e.preventDefault();
+      const successId = page === 'leadership' ? 'form-success-leadership' : 'form-success-home';
+      e.target.style.display = 'none';
+      document.getElementById(successId).style.display = 'block';
+    }
+
+    // Video fallback: show image if video fails
+    const video = document.querySelector('.hero-video-bg');
+    const fallback = document.getElementById('hero-fallback');
+    if (video) {
+      video.addEventListener('error', () => {
+        video.style.display = 'none';
+        if (fallback) fallback.style.display = 'block';
+      });
+      // If video stalls for too long, show image fallback
+      setTimeout(() => {
+        if (video.readyState === 0) {
+          video.style.display = 'none';
+          if (fallback) fallback.style.display = 'block';
+        }
+      }, 3000);
+    }
+
+    // Scroll-based nav shadow
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 10) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.25)';
+      } else {
+        nav.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
+      }
+    });
+  </script>
+
+</body>
+</html>
