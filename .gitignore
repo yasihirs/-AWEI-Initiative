@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Raw media awaiting optimization — the processed versions in assets/ get published
+assets/incoming/*
+!assets/incoming/PUT_MEDIA_HERE.md

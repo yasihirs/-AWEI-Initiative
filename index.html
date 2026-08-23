@@ -6,28 +6,35 @@
   <title>AWEI | Awdal Water and Education Initiative</title>
   <meta name="description" content="Awdal Water & Education Initiative Inc. — Securing clean water infrastructure and educational stability across the rangelands of Awdal." />
   <link rel="stylesheet" href="style.css" />
-  <!-- Favicon placeholder: replace favicon.ico with your circular AWEI emblem -->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Link previews for email and social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Awdal Water and Education Initiative" />
+  <meta property="og:title" content="AWEI | Awdal Water and Education Initiative" />
+  <meta property="og:description" content="Securing clean water infrastructure and educational stability across the rangelands of Awdal." />
+  <meta property="og:image" content="assets/awei_vest.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
 
   <!-- ===== GLOBAL NAV ===== -->
   <nav id="main-nav">
-    <a href="#" class="nav-brand" onclick="showPage('home'); return false;">
+    <a href="#/home" class="nav-brand">
       <div class="nav-logo-circle">AWEI</div>
       <div class="nav-brand-text">
         AWEI
         <span>Awdal Water and Education Initiative</span>
       </div>
     </a>
-    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+    <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#" onclick="showPage('home'); return false;" id="nav-home" class="active">Home</a></li>
-      <li><a href="#" onclick="showPage('framework'); return false;" id="nav-framework">Our Framework</a></li>
-      <li><a href="#" onclick="showPage('pilot'); return false;" id="nav-pilot">The AWEI Pilot</a></li>
-      <li><a href="#" onclick="showPage('leadership'); return false;" id="nav-leadership">Leadership & Governance</a></li>
+      <li><a href="#/home" id="nav-home" class="active">Home</a></li>
+      <li><a href="#/framework" id="nav-framework">Our Framework</a></li>
+      <li><a href="#/pilot" id="nav-pilot">The AWEI Pilot</a></li>
+      <li><a href="#/leadership" id="nav-leadership">Leadership &amp; Governance</a></li>
     </ul>
   </nav>
 
@@ -38,11 +45,13 @@
 
     <!-- Hero -->
     <section class="hero">
-      <video class="hero-video-bg" autoplay muted loop playsinline>
-        <source src="assets/awei_field.mov" type="video/mp4" />
+      <!-- Photo is the default background. The video layers over it only once it can actually play,
+           so a missing or slow-loading video never leaves the hero blank. -->
+      <img class="hero-img-bg" src="assets/awei_vest.jpeg" alt="" id="hero-fallback" />
+      <video class="hero-video-bg" id="hero-video" autoplay muted loop playsinline style="display:none;">
+        <source src="assets/awei_field.mp4" type="video/mp4" />
+        <source src="assets/awei_field.mov" type="video/quicktime" />
       </video>
-      <!-- Fallback image shown if video doesn't load -->
-      <img class="hero-img-bg" src="assets/awei_vest.jpeg" alt="AWEI field work" id="hero-fallback" style="display:none;" />
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-eyebrow">
@@ -53,8 +62,8 @@
         <p class="hero-subtitle-org">Awdal Water and Education Initiative</p>
         <h3>Securing clean water infrastructure and educational stability across the rangelands of Awdal.</h3>
         <div>
-          <a href="#" class="btn-primary" onclick="showPage('pilot'); return false;">Support the 2026 Pilot Initiative</a>
-          <a href="#" class="btn-outline" onclick="showPage('framework'); return false;">Learn More</a>
+          <a href="#/pilot" class="btn-primary">Support the 2026 Pilot Initiative</a>
+          <a href="#/framework" class="btn-outline">Learn More</a>
         </div>
       </div>
     </section>
@@ -180,20 +189,20 @@
             <div style="font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--green); margin-bottom:16px;">Why This Matters</div>
             <div style="display:flex; flex-direction:column; gap:12px;">
               <div style="font-size:14px; color:var(--gray-800); line-height:1.6;">
-                Only 28% of rural households in the region have access to even a basic water supply (UNICEF)
+                Nearly half of rural households still lack access to basic drinking water services, against 79% coverage in urban areas (UNICEF WASH Needs Assessment, 2024)
               </div>
               <div style="font-size:14px; color:var(--gray-800); line-height:1.6;">
-                Recent droughts pushed an estimated 15 million children across the Horn of Africa out of school, with 3.3 million more at risk of dropping out (UNICEF)
+                Roughly 40% of existing water sources are non-functional — scarcity that pushes families toward unsafe water sources and consumption practices (WHO–UNICEF Joint Monitoring Programme)
               </div>
               <div style="font-size:14px; color:var(--gray-800); line-height:1.6;">
-                Girls and women are forced to travel ever-longer distances to collect water — pulling girls from classrooms and exposing them to heightened risk (UNICEF)
+                Households without reliable access to clean water nearly doubled during recent drought years, from 5.6 million to 10.5 million across the Horn of Africa (UNICEF)
               </div>
               <div style="font-size:14px; color:var(--gray-800); line-height:1.6;">
-                With roughly 40% of existing water sources non-functional, scarce resources push families toward unsafe water sources and consumption practices (WHO–UNICEF JMP)
+                Women and girls travel ever-longer distances to collect water, pulling girls from classrooms and exposing them to heightened risk (UNICEF)
               </div>
             </div>
-            <div style="margin-top:16px; font-size:12px; color:var(--gray-600);">
-              Sources: UNICEF Horn of Africa drought reports; WHO–UNICEF Joint Monitoring Programme
+            <div style="margin-top:16px; font-size:12px; color:var(--gray-600); line-height:1.6;">
+              Sources: UNICEF WASH Needs Assessment (2024); WHO–UNICEF Joint Monitoring Programme; UNICEF Horn of Africa drought reporting. Figures are national and regional; they describe the conditions AWEI's work in Awdal responds to.
             </div>
           </div>
         </div>
@@ -225,7 +234,7 @@
           </div>
         </div>
       </div>
-      <p class="pilot-intro-text">Before scaling to large-scale mechanized engineering, AWEI is launching an immediate $15,000 proof-of-concept pilot program this summer targeted at high-risk primary schools. This fast-tracked funding bypasses administrative overhead to deliver resources directly to the field.</p>
+      <p class="pilot-intro-text">Before scaling to larger regional infrastructure, AWEI is launching an immediate $15,000 proof-of-concept pilot targeted at high-risk primary schools. This fast-tracked funding bypasses administrative overhead to deliver resources directly to the field.</p>
     </section>
 
     <section class="allocation-section">
@@ -393,31 +402,49 @@
 
   <!-- ===== JavaScript ===== -->
   <script>
-    // Page router
-    const pages = ['home', 'framework', 'pilot', 'leadership'];
-    const pageMap = {
-      'home':       { pageId: 'page-home',       navId: 'nav-home' },
-      'framework':  { pageId: 'page-framework',  navId: 'nav-framework' },
-      'pilot':      { pageId: 'page-pilot',      navId: 'nav-pilot' },
-      'leadership': { pageId: 'page-leadership', navId: 'nav-leadership' },
+    // Page router — driven by the URL hash so each page is linkable and Back works.
+    const routes = {
+      'home':       { pageId: 'page-home',       navId: 'nav-home',       title: 'AWEI | Awdal Water and Education Initiative' },
+      'framework':  { pageId: 'page-framework',  navId: 'nav-framework',  title: 'Our Framework | AWEI' },
+      'pilot':      { pageId: 'page-pilot',      navId: 'nav-pilot',      title: 'The AWEI Pilot | AWEI' },
+      'leadership': { pageId: 'page-leadership', navId: 'nav-leadership', title: 'Leadership & Governance | AWEI' },
     };
 
-    function showPage(name) {
-      pages.forEach(p => {
-        document.getElementById(pageMap[p].pageId).classList.remove('active');
-        document.getElementById(pageMap[p].navId).classList.remove('active');
-      });
-      document.getElementById(pageMap[name].pageId).classList.add('active');
-      document.getElementById(pageMap[name].navId).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-
-      // Close mobile nav
-      document.getElementById('nav-links').classList.remove('open');
+    function currentRoute() {
+      const name = (window.location.hash || '').replace(/^#\/?/, '');
+      return routes[name] ? name : 'home';
     }
+
+    function render(name, smooth) {
+      Object.keys(routes).forEach(key => {
+        document.getElementById(routes[key].pageId).classList.remove('active');
+        document.getElementById(routes[key].navId).classList.remove('active');
+      });
+      document.getElementById(routes[name].pageId).classList.add('active');
+      document.getElementById(routes[name].navId).classList.add('active');
+      document.title = routes[name].title;
+      closeMobileNav();
+      window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+    }
+
+    // Kept so any older inline link still works.
+    function showPage(name) {
+      window.location.hash = '#/' + name;
+    }
+
+    window.addEventListener('hashchange', () => render(currentRoute(), true));
+    render(currentRoute(), false);
 
     // Mobile nav
     function toggleMobileNav() {
-      document.getElementById('nav-links').classList.toggle('open');
+      const links = document.getElementById('nav-links');
+      const open = links.classList.toggle('open');
+      document.querySelector('.nav-toggle').setAttribute('aria-expanded', String(open));
+    }
+
+    function closeMobileNav() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
     }
 
     // Form submit handler (simulated — wire to real backend or Formspree)
@@ -428,21 +455,11 @@
       document.getElementById(successId).style.display = 'block';
     }
 
-    // Video fallback: show image if video fails
-    const video = document.querySelector('.hero-video-bg');
-    const fallback = document.getElementById('hero-fallback');
+    // The photo is already showing. Reveal the video only once it can actually play,
+    // so a missing, slow, or unsupported video simply leaves the photo in place.
+    const video = document.getElementById('hero-video');
     if (video) {
-      video.addEventListener('error', () => {
-        video.style.display = 'none';
-        if (fallback) fallback.style.display = 'block';
-      });
-      // If video stalls for too long, show image fallback
-      setTimeout(() => {
-        if (video.readyState === 0) {
-          video.style.display = 'none';
-          if (fallback) fallback.style.display = 'block';
-        }
-      }, 3000);
+      video.addEventListener('canplay', () => { video.style.display = 'block'; }, { once: true });
     }
 
     // Scroll-based nav shadow
