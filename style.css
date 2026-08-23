@@ -506,6 +506,73 @@ nav {
   box-shadow: 0 16px 48px rgba(0,0,0,0.12);
 }
 
+/* ---------- Field Documentation ---------- */
+.field-section {
+  padding: 96px 72px;
+  background: var(--off-white);
+  border-top: 1px solid var(--gray-300);
+}
+
+.field-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.field-inner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3.5vw, 36px);
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.field-sub {
+  color: var(--gray-600);
+  font-size: 16px;
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 660px;
+}
+
+.field-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Source footage is portrait; a 3:5 frame keeps every card the same
+   height without cropping away most of the image. */
+.field-card img,
+.field-card video {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  background: var(--gray-800);
+  display: block;
+}
+
+.field-caption {
+  padding: 16px 18px;
+  font-size: 13.5px;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.field-note {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--gray-600);
+  font-style: italic;
+}
+
 /* ---------- Pilot Page ---------- */
 .pilot-hero {
   background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
