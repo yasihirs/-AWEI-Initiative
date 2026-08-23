@@ -214,18 +214,24 @@
       <div class="field-inner">
         <span class="section-label">Field Documentation</span>
         <h2 class="display-serif">From the Ground in Awdal</h2>
-        <p class="field-sub">Photographs recorded during AWEI's site assessment, documenting the water infrastructure our pilot is designed to address.</p>
+        <p class="field-sub">Photographs and footage recorded during AWEI's site assessment, documenting the water infrastructure our pilot is designed to address. Select a still to play its clip.</p>
         <div class="field-grid">
           <figure class="field-card">
-            <img src="assets/field_catchment.jpg" alt="A roofed concrete water catchment in dry scrubland, with cattle drinking beside it" />
-            <figcaption class="field-caption">A roofed water catchment serving both households and livestock.</figcaption>
+            <video controls preload="none" playsinline poster="assets/field_catchment.jpg">
+              <source src="assets/field_catchment.mp4" type="video/mp4" />
+              <img src="assets/field_catchment.jpg" alt="A roofed concrete water catchment in dry scrubland, with cattle drinking beside it" />
+            </video>
+            <figcaption class="field-caption">A roofed water catchment serving both households and livestock. <span class="field-play">Play video</span></figcaption>
           </figure>
           <figure class="field-card">
-            <img src="assets/field_dry_reservoir.jpg" alt="A large excavated reservoir standing empty in arid, rocky terrain" />
-            <figcaption class="field-caption">An excavated reservoir standing dry.</figcaption>
+            <video controls preload="none" playsinline poster="assets/field_dry_reservoir.jpg">
+              <source src="assets/field_dry_reservoir.mp4" type="video/mp4" />
+              <img src="assets/field_dry_reservoir.jpg" alt="A large excavated reservoir standing empty in arid, rocky terrain" />
+            </video>
+            <figcaption class="field-caption">An excavated reservoir standing dry. <span class="field-play">Play video</span></figcaption>
           </figure>
         </div>
-        <p class="field-note">Photographs taken in the field, June 2026.</p>
+        <p class="field-note">Photographs and footage recorded in the field, June 2026.</p>
       </div>
     </section>
 
@@ -280,10 +286,17 @@
       <span class="section-label" style="color:var(--gold);">Take Action</span>
       <h2 class="display-serif">Make a Direct Impact</h2>
       <p>Your contribution to the AWEI Pilot Initiative goes directly to communities and schools on the ground in the Awdal region.</p>
-      <a href="#CAMPAIGN_LINK_PLACEHOLDER" class="btn-primary" style="font-size:16px; padding:18px 48px;">
+      <!-- Opens the Zeffy donation form in an overlay via embed-form-script.min.js (loaded at end of body).
+           The script does not preventDefault on click, so this must not also carry an href. -->
+      <button type="button" class="btn-primary" style="font-size:16px; padding:18px 48px;"
+              zeffy-form-link="https://www.zeffy.com/en-US/embed/donation-form/awei-pilot-project?modal=true">
         Contribute to the AWEI Pilot Initiative
-      </a>
-      <p class="cta-disclaimer">Crowdfunding link will be active shortly. 501(c)(3) status pending — contributions may be retroactively tax-deductible.</p>
+      </button>
+      <p class="cta-disclaimer">
+        Opens a secure donation form powered by Zeffy, or
+        <a href="https://www.zeffy.com/en-US/donation-form/awei-pilot-project" target="_blank" rel="noopener noreferrer">open the donation page directly</a>.<br />
+        501(c)(3) status pending — contributions may be retroactively tax-deductible.
+      </p>
     </section>
 
     <!-- Footer -->
@@ -492,6 +505,9 @@
       }
     });
   </script>
+
+  <!-- Zeffy donation modal: turns any [zeffy-form-link] element into an overlay donation form -->
+  <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 
 </body>
 </html>

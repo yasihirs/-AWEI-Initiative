@@ -254,6 +254,9 @@ nav {
   transition: all 0.2s;
   border: 2px solid var(--green);
   cursor: pointer;
+  /* Set explicitly so <button class="btn-primary"> matches the <a> version */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
 }
 
 .btn-primary:hover {
@@ -566,6 +569,16 @@ nav {
   line-height: 1.6;
 }
 
+.field-play {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
 .field-note {
   margin-top: 28px;
   font-size: 13px;
@@ -700,7 +713,15 @@ nav {
   font-size: 13px;
   color: rgba(255,255,255,0.45);
   margin-top: 20px;
+  line-height: 1.8;
 }
+
+.cta-disclaimer a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+}
+
+.cta-disclaimer a:hover { color: var(--white); }
 
 /* ---------- Leadership Page ---------- */
 .leadership-goals {
