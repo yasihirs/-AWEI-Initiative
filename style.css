@@ -856,6 +856,15 @@ nav {
   line-height: 1.8;
 }
 
+.board-note {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-300);
+  font-size: 14px;
+  color: var(--gray-600);
+  line-height: 1.8;
+}
+
 /* ---------- Legal Block ---------- */
 .legal-section {
   padding: 64px 72px;
